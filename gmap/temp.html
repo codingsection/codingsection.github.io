@@ -153,8 +153,6 @@ function getCurrentLocation(){
 				lng: position.coords.longitude
 			};
 			
-			console.log(latlng.lat);
-			console.log(latlng.lng);
 			drawPath(latlng.lat, latlng.lng);
 	}, 
 	function() {
@@ -176,7 +174,7 @@ function drawPath(lat, lng){
 		location: lat + "," + lng,
 		stopover: false
 	});
-	
+	console.log("before serTimeout");
 	setTimeout("getCurrentLocation()", 5000);
 }
 /*	Based on current location's longitude and latitude, getting and setting meaningful readable location name
