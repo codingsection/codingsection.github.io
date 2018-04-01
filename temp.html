@@ -165,7 +165,7 @@ function drawPath(lat, lng){
 	if(status == "false"){
 		start = {lat:lat,lng:lng};
 		status = "true";
-		//getGeoLocationName(start, "source_placeholder", "Pickup at: ");
+		getGeoLocationName(start, "source_placeholder", "Pickup at: ");
 	}
 	
 	stop = {lat:lat,lng:lng};
@@ -182,6 +182,7 @@ in info window. Also, centering map on exact location	*/
 function getGeoLocationName(latlng, placeholder, pretext){
 	geoCoding.geocode({'location': latlng}, function(results, response){
 		if (response === google.maps.GeocoderStatus.OK) {
+		/*
 			if (results[1]){
 				var location = results[1].formatted_address;
 				$("#" + placeholder).html("<strong>" + pretext + "</strong>" + location);
@@ -196,6 +197,7 @@ function getGeoLocationName(latlng, placeholder, pretext){
 				infowindow.open(map);
 				infoWindows.push(infowindow);
 			}
+			*/
 		}
 	});
 }
