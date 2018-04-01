@@ -190,10 +190,9 @@ function getGeoLocationName(latlng, placeholder, pretext){
 					maxWidth: 200
 				});
 				
-				console.log("step - 1");
-				
 				map.center = {lat: latlng.lat, lng: latlng.lng};
 				infowindow.setContent(location);
+				console.log("step - 1");
 				infowindow.setPosition(latlng);
 				infowindow.open(map);
 				infoWindows.push(infowindow);
