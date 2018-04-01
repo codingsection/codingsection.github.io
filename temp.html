@@ -194,10 +194,10 @@ function getGeoLocationName(latlng, placeholder, pretext){
 				infowindow.setContent(location);
 				infowindow.setPosition(latlng);
 				console.log("step - 1");
-				
+				try{
 				infowindow.open(map);
-				
-				
+				}
+				catch(){}
 				infoWindows.push(infowindow);
 			}
 		}
