@@ -180,9 +180,9 @@ function drawPath(lat, lng){
 /*	Based on current location's longitude and latitude, getting and setting meaningful readable location name
 in info window. Also, centering map on exact location	*/ 
 function getGeoLocationName(latlng, placeholder, pretext){
+/*
 	geoCoding.geocode({'location': latlng}, function(results, response){
 		if (response === google.maps.GeocoderStatus.OK) {
-		/*
 			if (results[1]){
 				var location = results[1].formatted_address;
 				$("#" + placeholder).html("<strong>" + pretext + "</strong>" + location);
@@ -197,9 +197,9 @@ function getGeoLocationName(latlng, placeholder, pretext){
 				infowindow.open(map);
 				infoWindows.push(infowindow);
 			}
-			*/
 		}
 	});
+	*/
 }
 /*	This is playing very important role in this project. Based on preserved locations from beginning to end journey,
 	drawing complete actual path/route from source to destination on map. Also, showing total kilometres travelled and overall
