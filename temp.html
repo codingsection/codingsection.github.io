@@ -190,12 +190,13 @@ function getGeoLocationName(latlng, placeholder, pretext){
 					maxWidth: 200
 				});
 				
+				var uluru = {lat: latlng.lat, lng: latlng.lng};
 				map.center = {lat: latlng.lat, lng: latlng.lng};
 				infowindow.setContent(location);
 				infowindow.setPosition(latlng);
 				console.log("step - 1");
-				//infowindow.open(map);
-				//infoWindows.push(infowindow);
+				infowindow.open(map, uluru);
+				infoWindows.push(infowindow);
 			}
 		}
 	});
