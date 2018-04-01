@@ -61,7 +61,6 @@
 		position:relative;
 		top:1px;
 	}
-
     </style>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -119,7 +118,6 @@ var stop;
 var map;
 var progress = "true";
 var status = "false";
-
 /*	This initialization function will invoke very first as soon as Google's JavaScript
 	map API will load. Setup required objects and load map	*/
 function initMap(){
@@ -145,7 +143,6 @@ function initMap(){
 		alert("Location service not supported in your web browser!");
 	}
 }
-
 // 	This function is use to repeatedly collect current location information 
 function getCurrentLocation(){
 	if(progress == "false"){ return; }
@@ -161,7 +158,6 @@ function getCurrentLocation(){
 	  alert("Unable to get current location");
 	});
 }
-
 /* 	Preserving current location to draw complete route on map. Repeatedly looking
 	for new location information after set time interval of five seconds	*/ 
 function drawPath(lat, lng){
@@ -180,7 +176,6 @@ function drawPath(lat, lng){
 	
 	setTimeout("getCurrentLocation()", 5000);
 }
-
 /*	Based on current location's longitude and latitude, getting and setting meaningful readable location name
 in info window. Also, centering map on exact location	*/ 
 function getGeoLocationName(latlng, placeholder, pretext){
@@ -197,13 +192,15 @@ function getGeoLocationName(latlng, placeholder, pretext){
 				map.center = {lat: latlng.lat, lng: latlng.lng};
 				infowindow.setContent(location);
 				infowindow.setPosition(latlng);
-				infowindow.open(map);
+				try{
+					infowindow.open(map);
+				}
+				catch(err){}
 				infoWindows.push(infowindow);
 			}
 		}
 	});
 }
-
 /*	This is playing very important role in this project. Based on preserved locations from beginning to end journey,
 	drawing complete actual path/route from source to destination on map. Also, showing total kilometres travelled and overall
 	time taken	*/
@@ -243,7 +240,6 @@ function displayTravelledRouteOnMap(){
 		}
 	});
 }
-
 /* 	This is simply a function to shuffle an array elements. I had taken this function
 	from StackOverflow.com to fulfill my shuffling and shortlisting requirement. Performed
 	little modification to return only eight elements instead of all.
@@ -252,7 +248,6 @@ function displayTravelledRouteOnMap(){
 function shuffle(array) {
 	var counter = 1;
 	var currentIndex = array.length, temporaryValue, randomIndex;
-
 	while (0 !== currentIndex) {
 		randomIndex = Math.floor(Math.random() * currentIndex);
 		currentIndex -= 1;
@@ -267,10 +262,8 @@ function shuffle(array) {
 			array.shift();
 		}
 	}
-
 	return array;
 }
-
 // These are simply event handlers when clicking on various buttons to take action 
 $(document).ready(function(){
 	$("#source").click(function(){
@@ -289,7 +282,7 @@ $(document).ready(function(){
 	});
 });	
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNT3S4ih2sFQ6Jz82-iEQHowbpBAyGWpg&signed_in=true&callback=initMap"
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNT3S4ih2sFQ6Jz82-iEQHowbpBAyGWpg&callback=initMap"
         async defer>
 </script>
 <script>
@@ -297,10 +290,8 @@ $(document).ready(function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
   ga('create', 'UA-60224435-1', 'auto');
   ga('send', 'pageview');
-
 </script>
 </body>
 </html>
