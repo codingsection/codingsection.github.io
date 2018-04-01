@@ -182,7 +182,6 @@ in info window. Also, centering map on exact location	*/
 function getGeoLocationName(latlng, placeholder, pretext){
 	geoCoding.geocode({'location': latlng}, function(results, response){
 		if (response === google.maps.GeocoderStatus.OK) {
-		/*
 			if (results[1]){
 				var location = results[1].formatted_address;
 				$("#" + placeholder).html("<strong>" + pretext + "</strong>" + location);
@@ -191,13 +190,14 @@ function getGeoLocationName(latlng, placeholder, pretext){
 					maxWidth: 200
 				});
 				
+				console.log("step - 1");
+				
 				map.center = {lat: latlng.lat, lng: latlng.lng};
 				infowindow.setContent(location);
 				infowindow.setPosition(latlng);
 				infowindow.open(map);
 				infoWindows.push(infowindow);
 			}
-			*/
 		}
 	});
 }
