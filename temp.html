@@ -162,11 +162,10 @@ function getCurrentLocation(){
 /* 	Preserving current location to draw complete route on map. Repeatedly looking
 	for new location information after set time interval of five seconds	*/ 
 function drawPath(lat, lng){
-    return;
 	if(status == "false"){
 		start = {lat:lat,lng:lng};
 		status = "true";
-		getGeoLocationName(start, "source_placeholder", "Pickup at: ");
+		//getGeoLocationName(start, "source_placeholder", "Pickup at: ");
 	}
 	
 	stop = {lat:lat,lng:lng};
