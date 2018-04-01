@@ -192,9 +192,9 @@ function getGeoLocationName(latlng, placeholder, pretext){
 				
 				map.center = {lat: latlng.lat, lng: latlng.lng};
 				infowindow.setContent(location);
-				console.log("step - 1");
 				infowindow.setPosition(latlng);
 				infowindow.open(map);
+				console.log("step - 1");
 				infoWindows.push(infowindow);
 			}
 		}
