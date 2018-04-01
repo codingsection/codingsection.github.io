@@ -194,10 +194,10 @@ function getGeoLocationName(latlng, placeholder, pretext){
 				infowindow.setContent(location);
 				infowindow.setPosition(latlng);
 				console.log("step - 1");
-				try{
+				
 				infowindow.open(map);
-				}
-				catch(err){}
+				
+				
 				infoWindows.push(infowindow);
 			}
 		}
@@ -284,7 +284,7 @@ $(document).ready(function(){
 	});
 });	
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNT3S4ih2sFQ6Jz82-iEQHowbpBAyGWpg&signed_in=true&callback=initMap"
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNT3S4ih2sFQ6Jz82-iEQHowbpBAyGWpg&callback=initMap"
         async defer>
 </script>
 <script>
