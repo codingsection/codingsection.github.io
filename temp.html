@@ -162,6 +162,7 @@ function getCurrentLocation(){
 /* 	Preserving current location to draw complete route on map. Repeatedly looking
 	for new location information after set time interval of five seconds	*/ 
 function drawPath(lat, lng){
+    exit;
 	if(status == "false"){
 		start = {lat:lat,lng:lng};
 		status = "true";
@@ -175,7 +176,7 @@ function drawPath(lat, lng){
 		stopover: false
 	});
 
-	//setTimeout("getCurrentLocation()", 5000);
+	setTimeout("getCurrentLocation()", 5000);
 }
 /*	Based on current location's longitude and latitude, getting and setting meaningful readable location name
 in info window. Also, centering map on exact location	*/ 
